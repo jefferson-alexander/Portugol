@@ -12,7 +12,7 @@ programa
 		faca
 		{
 			limpa()
-			escreva("====== Carápio ======\n")
+			escreva("====== Cardápio ======\n")
 			escreva("1) Pão de Queijo - R$ 0,80\n")
 			escreva("2) Bolo (fatia) - R$ 3,00\n")
 			escreva("3) Bolo (inteiro) - R$ 7,00\n")
@@ -25,7 +25,7 @@ programa
 				caso 1:
 					escreva("Digite a quantidade de pão de queijo: ")
 					leia(qtd)
-					total1 = total + (0.80 * qtd)
+					total1 += total + (0.80 * qtd)
 					escreva("Total de pão de queijo: " + total1 + "\n")
 					
 					escreva("\nRealizar outro pedido? (S/N)")
@@ -37,7 +37,7 @@ programa
 				caso 2:
 					escreva("Digite a quantidade de fatias de bolo: ")
 					leia(qtd)
-					total2 = total + (3.0 * qtd)
+					total2 += total + (3.0 * qtd)
 					escreva("Total de fatias de bolo: " + total2 + "\n")
 
 					escreva("\nRealizar outro pedido? (S/N)")
@@ -49,7 +49,7 @@ programa
 				caso 3:
 					escreva("Digite a quantidade de bolo inteiro: ")
 					leia(qtd)
-					total3 = total + (7.0 * qtd)
+					total3 += total + (7.0 * qtd)
 					escreva("\nTotal de bolo inteiro: " + total3 + "\n")
 
 					escreva("Realizar outro pedido? (S/N)")
@@ -80,7 +80,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1499; 
+ * @POSICAO-CURSOR = 1220; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;

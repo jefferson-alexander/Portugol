@@ -1,21 +1,58 @@
+//Quadrados mágicos consistem em uma matriz numérica em que as somas das linhas,
+//das colunas e das duas diagonais principais são as mesmas. Os números digitados
+//não podem se repetir
 programa
 {
 	funcao inicio()
 	{
-		//
-		inteiro mat[3][3], i,j 
+		//i = linha, j = coluna. K e L tratamento de repetições das linhas e colunas
+		inteiro mat[3][3], i=0, j=0, k, l, numero=0, contador=1 
 		inteiro igual=0, soma=0, total=0
+		logico solicita_numero = falso, repetiu
 
-				escreva("================   QUADRADO MÁGICO   ================\n")
-		para (i=0; i<3; i++)
+		escreva("================   QUADRADO MÁGICO   ================\n")	
+
+		faca
 		{
-			para (j=0; j<3; j++)
+			//assim que um número é digitado, ele volta a ficar falso
+			//irá passar para a próxima linha a ser preenchida
+			repetiu = falso
+
+			escreva ("\nDigite um numero para a linha ",i," e coluna ",j,": ")
+			leia(numero)
+			//verificando se o número já está digitado
+			para (k=0; k<3; k++)
 			{
-				escreva ("\nDigite um numero para a linha ",i," e coluna ",j,": ")
-				leia(mat[i][j])
-			}	
+				para (l=0; l<3; l++)
+				{
+					se(mat[k][l] == numero)
+					{
+						//será verdadeiro quando o número se repetir
+						repetiu = verdadeiro
+					}
+				}	
+			}
+			//caso o número digitado não seja repetido
+			se(repetiu != verdadeiro)
+			{
+				mat[i][j] = numero
+				se (j == 2)
+				{
+					i++ //acrescenta mais um na linha
+					j = 0  //coluna retorna o valor inicial zero
+				}
+				senao
+				{
+					j++ //acrescentando mais um na coluna
+				}
+				contador++				
+			}
+			//vai solicitar o número enquanto o contador for menor que 9
+			solicita_numero = contador <= 9			
 		}
-		 //determina valor de total na matriz
+		enquanto(solicita_numero)
+		
+		//determina valor de total na matriz
 		para (i=0; i<3; i++)
 		{ 
 			total = total + mat[0][i]
@@ -88,7 +125,6 @@ programa
 			}	
 				escreva("\n")  
 			}		
-		
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -96,7 +132,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 542; 
+ * @POSICAO-CURSOR = 2647; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
